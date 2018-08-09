@@ -63,7 +63,7 @@ defmodule Mix.Releases.Config.Providers.Elixir do
       merged_app_config =
         app
         |> Application.get_all_env()
-        |> Mix.Config.merge(app_config)
+        |> Mix.Config.merge([{app, app_config}])
       {app, merged_app_config}
     end)
   end
